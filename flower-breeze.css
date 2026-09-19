@@ -1,0 +1,80 @@
+/* Glossy blue flower: the petals alone react to a soft breeze. */
+.portrait-placeholder.flower-scene {
+  background:
+    radial-gradient(circle at 50% 34%, rgba(102, 223, 255, .16), transparent 25%),
+    linear-gradient(155deg, #102d6c, #06112d 72%);
+}
+
+.flower-bloom {
+  top: 13%;
+  width: 172px;
+  height: 172px;
+  animation: none;
+}
+
+.flower-petal {
+  top: 0;
+  bottom: auto;
+  left: 52px;
+  width: 68px;
+  height: 112px;
+  border: 1px solid rgba(218, 251, 255, .5);
+  border-radius: 56% 56% 48% 48% / 66% 66% 34% 34%;
+  background: linear-gradient(135deg, rgba(238, 254, 255, .96), #8ce3ff 28%, #348bdf 67%, #174caa);
+  box-shadow: inset 8px 8px 13px rgba(255, 255, 255, .42), inset -7px -8px 14px rgba(15, 73, 177, .34), 0 0 14px rgba(91, 215, 255, .22);
+  transform-origin: 34px 88px;
+  opacity: 1;
+  animation: petal-breeze 4.6s ease-in-out infinite;
+}
+
+.petal-one { --angle: 0deg; --flutter: 3deg; animation-delay: -.1s; }
+.petal-two { --angle: 45deg; --flutter: -2deg; animation-delay: -.7s; }
+.petal-three { --angle: 90deg; --flutter: 3deg; animation-delay: -1.4s; }
+.petal-four { --angle: 135deg; --flutter: -2deg; animation-delay: -2.1s; }
+.petal-five { --angle: 180deg; --flutter: 2deg; animation-delay: -2.8s; }
+.petal-six { --angle: 225deg; --flutter: -3deg; animation-delay: -3.5s; display: block; }
+.petal-seven { --angle: 270deg; --flutter: 2deg; animation-delay: -4.2s; }
+.petal-eight { --angle: 315deg; --flutter: -2deg; animation-delay: -4.9s; }
+
+.flower-centre {
+  top: 68px;
+  bottom: auto;
+  left: 67px;
+  z-index: 4;
+  width: 38px;
+  height: 38px;
+  background: radial-gradient(circle at 34% 28%, #e7ffff, #82e7ff 38%, #237ad0 72%);
+  box-shadow: 0 0 16px 5px rgba(121, 228, 255, .52);
+  animation: none;
+}
+
+.flower-stem {
+  left: 49%;
+  height: 57%;
+  background: linear-gradient(90deg, #15518b, #77dff1 46%, #16487f);
+  animation: none;
+}
+
+.flower-leaf {
+  background: linear-gradient(135deg, #56cce0, #164a8a);
+  animation: none;
+}
+
+.leaf-left {
+  bottom: 26%;
+  left: 29%;
+  transform: rotate(-24deg);
+}
+
+.leaf-right {
+  display: block;
+  right: 28%;
+  bottom: 32%;
+  left: auto;
+  transform: scaleX(-1) rotate(-24deg);
+}
+
+@keyframes petal-breeze {
+  0%, 100% { transform: rotate(var(--angle)) scale(1); }
+  50% { transform: rotate(calc(var(--angle) + var(--flutter))) scale(1.025); }
+}

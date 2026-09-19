@@ -1,0 +1,7 @@
+# Never publish local settings, keys, or development secrets.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
